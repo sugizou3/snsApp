@@ -1,0 +1,160 @@
+.main__body_create {
+  background-color: #f9f9f9;
+  display: flex;
+  margin-top: 0px;
+  margin-left: 210px; 
+  min-height: 100vh;
+  height: 100%;
+  max-width: 100vw;
+}
+
+
+.form {
+  flex: 1;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 0px;
+}
+
+.form p {
+  margin-top: 60px;
+  margin-bottom: 2px;
+}
+
+.form input {
+  width: 100%;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-width: 0px,0px,0px,1px;
+  background-color: #f9f9f9;
+  border-color:#e5e5e5 ;
+}
+
+.form input:focus {
+  outline: 0;
+}
+
+.form textarea {
+  width: 100%;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-width: 0px,0px,0px,1px;
+  border-bottom: solid;
+  border-color:#e5e5e5 ;
+  background-color: #f9f9f9;
+}
+
+.form__bottom {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px 25px;
+  font-size: 120%;
+}
+
+.form-tag-main {
+  font-size: 120%;
+  font-weight: bold;
+  font-family:'Zen Antique', serif ;
+}
+
+.form-input-main {
+  font-size: 150%;
+}
+
+.form-tag-name {
+  font-size: 100%;
+  font-weight: bold;
+  font-family:'Zen Antique', serif ;
+}
+
+.form-input-name {
+  font-size: 120%;
+}
+
+.form-tag-sub {
+  font-size: 120%;
+  font-weight: bold;
+  font-family:'Zen Antique', serif ;
+}
+
+.form-input-sub {
+  font-size: 20px;
+  height: 60px;
+}
+
+
+
+.FlexTextarea {
+  position: relative;
+  line-height: 1.9;
+  font-weight: bold;
+  font-family:'Zen Antique', serif ;
+}
+
+.FlexTextarea__dummy {
+  overflow: hidden;
+  visibility: hidden;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  min-height: 3rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border: 1px solid;
+}
+
+.FlexTextarea__textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid #b6c3c6;
+  border-radius: 4px;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  resize: none;
+  
+}
+
+.FlexTextarea__textarea::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
+}
+
+.FlexTextarea__textarea:focus {
+  outline: 0;
+}
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  .main__body_create {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 425px) {
+  .form-input-main {
+    font-size: 110%;
+  }
+  
+  .form-input-name {
+    font-size: 100%;
+  }
+  
+  
+}

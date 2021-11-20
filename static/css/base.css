@@ -1,0 +1,655 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header__left img {
+  height: 40px;
+}
+
+.user__avatar {
+  border-radius: 50%;
+  width: 45px;
+}
+
+.header {
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  background-color: white;
+  z-index: 100;
+  top: 0;
+  box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 5px;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.header__left img {
+  width: 100px;
+  margin-left: 0.5rem; /* Changed */
+}
+
+.header i {
+  padding: 0 px;
+  margin:0px 8px;
+  cursor: pointer;
+}
+
+.header__search form {
+  border: 1px solid #ddd;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header__search input {
+  width: 560px;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  height: 100%;
+}
+
+.header__search button {
+  padding: 0;
+  margin: 0;
+  width: 12%;
+  min-width: fit-content;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+.header__icons .search {
+  display: none;
+}
+
+
+.filters{
+  position: fixed;
+  left: 210px;
+  top: 70px;
+  width: calc(100% - 210px);
+  height: 60px;
+  background: rgb(255, 255, 255);
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.filters::-webkit-scrollbar{
+  display: none;
+}
+
+.filter-options{
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: #f0f0f0;
+  border: 1px solid #dbdbdb;
+  text-transform: capitalize;
+  margin-right: 10px;
+  color: #242424;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.filter-options.active{
+  color: #fff;
+  background: #242424;
+}
+
+/* Sidebar */
+.mainBody {
+  margin-top: 130px;
+  height: calc(100vh - 70px);
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  z-index: 100;
+  height: 100%;
+  width: 210px;
+  border-radius: 10px;
+  position: fixed;
+  min-width: fit-content;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.sidebar__categories {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.sidebar__category {
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+}
+
+.sidebar__category span {
+  margin-left: 15px;
+}
+
+.sidebar__category:hover {
+  background: #e5e5e5;
+  cursor: pointer;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+hr {
+  height: 1px;
+  background-color: #e5e5e5;
+  border: none;
+}
+
+.form-bar {
+  height: 1px;
+  background-color: #cccccc;
+  border: none;
+  width: 100%;
+}
+
+/* story */
+.story {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 120px;
+  height: 200px;
+  box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: transform 100ms ease-in;
+  cursor: pointer;
+}
+
+.story:hover {
+  transform: scale(1.07);
+}
+
+.story__avatar {
+  margin: 10px;
+  color: blue;
+}
+
+.story h4 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+
+
+
+.main__body {
+  background-color: #f9f9f9;
+  display: flex;
+  margin-top: 70px;
+  margin-left: 210px;
+}
+
+
+
+body {
+  background-color: #fff;
+}
+
+.feed {
+  flex: 1;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar {
+  padding: 5px 10px;
+  flex: 0.33;
+}
+
+
+/* post */
+
+/* selfcreate */
+.main_sentense {
+  font-size: 180%;
+  font-weight: bold;
+  font-family:'Zen Antique', serif ;
+}
+.author {
+  font-size: 100%;
+  font-weight: bold;
+  font-family:'Zen Antique', serif ;
+  display: flex;
+  justify-content: flex-end;
+}
+.sub_sentense {
+  margin-top: 10px;
+}
+
+.post {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 0px;
+  background-color: rgb(255, 255, 255);
+  /* box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75); */
+}
+
+.post__image img {
+  width: 100%;
+}
+
+.post__top {
+  display: flex;
+  /* position: relative; */
+  align-items: center;
+  padding: 15px;
+}
+
+.post__avatar {
+  margin-right: 10px;
+}
+
+.post__topInfo h3 {
+  font-size: medium;
+}
+
+.post__topInfo p {
+  font-size: small;
+  color: gray;
+}
+
+.post__bottom {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px 25px;
+  font-size: 120%;
+}
+
+.post__options {
+  padding-top: 10px;
+  /* border-top: 1px solid lightgray; */
+  border-bottom: 1px solid rgb(165, 165, 165);
+  display: flex;
+  justify-content: space-evenly;
+  font-size: medium;
+  color: gray;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.post__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  flex: 1;
+}
+
+.post__option p {
+  margin-left: 10px;
+}
+
+.post__option:hover {
+  background-color: #eff2f5;
+  border-radius: 10px;
+}
+
+.widgets {
+  z-index: 1;
+}
+
+/* footer {
+  bottom: 0px;
+} */
+
+.footer__icons {
+  display: none;
+}
+.footer__icons .material-icons {
+  font-size: 30px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .header__search {
+    display: none;
+  }
+
+  .header__icons .search {
+    display: inline;
+  }
+  
+
+  .sidebar {
+    display: none;
+  }
+
+  .header__input input {
+    display: none;
+  }
+
+  .header__middle {
+    display: none;
+  }
+
+  .header__info {
+    display: none;
+  }
+
+  .widgets {
+    display: none;
+  }
+
+  .feed {
+    margin-top: 20px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .story h4 {
+    font-size: 10px;
+  }
+
+  .story img {
+    width: 40px;
+  }
+}
+
+@media (min-width: 320px) {
+  .storyReel {
+    width: 100%;
+    overflow-x: scroll;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  /* CSS To Target 767 px width of screen */
+
+  .feed {
+    width: 50%;
+    padding: 10px 20px;
+  }
+
+  
+}
+
+@media (max-width: 425px) {
+  .header__search {
+    display: none;
+  }
+
+  .header__icons .material-icons {
+    display: none;
+  }
+
+  .header__icons .account {
+    display: inline;
+  }
+
+  .sidebar {
+    display: none;
+  }
+  
+
+  .main_sentense {
+    font-size: 120%;
+  }
+  .author {
+    font-size: 80%;
+  }
+  .sub_sentense {
+    font-size: 80%;
+  }
+
+  .post_bottonName {
+    display: none;
+  }
+
+  .footer__icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    padding:12px 10% ;
+    flex: 1;
+    position: fixed;
+    bottom: 0px;
+  }
+  .footer__icons .material-icons {
+    font-size: 30px;
+  }
+
+
+  
+}
+
+@media (max-width: 1024px) {
+  
+  .filters {
+    left: 0px;
+    width: 100%;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main__body {
+    margin-left: 0px;
+  }
+  .show-sidebar {
+    display: inline;
+    position: fixed;
+    top: 4.4rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 941px) {
+  .header__search input {
+    width: 300px;
+  }
+}
+
+
+
+
+/* filterを出し入れするためのｃｓｓ */
+
+/*　上に上がる動き　*/
+
+#filters.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime{
+  from {
+    opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+	transform: translateY(-100px);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#filters.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 0;
+	transform: translateY(-100px);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*========= 検索窓の設定 ===============*/
+
+/*==検索窓背景のエリア*/
+
+#search-wrap{
+  position:absolute;/*固定配置にして*/
+top: 0;
+  left: 0;
+z-index: -1;/*最背面に設定*/
+opacity: 0;/*透過を0に*/
+transition: all 0.4s;/*transitionを使ってスムースに現れる*/
+width:0%;
+height: 0vh;
+}
+
+/*ボタンクリック後、JSで#search-wrapに panelactive クラスが付与された後の見た目*/
+#search-wrap.panelactive{
+opacity: 1;/*不透明に変更*/
+ z-index: 3;/*全面に出現*/
+ background:#333;
+  /*中の要素を天地中央揃えにする設定*/
+ display: flex;
+ justify-content: center;
+ 
+}
+
+/*==検索窓のエリア*/
+
+#search-wrap .search-area{
+display: none;/*検索窓のエリアは、はじめ非表示*/
+}
+
+/*ボタンクリック後、JSで#search-wrapに panelactive クラスが付与された後*/
+#search-wrap.panelactive .search-area{
+display: block;/*検索窓エリアを表示*/
+width:80%;
+top: 10%;
+position: relative;
+}
+
+/*==検索フォームの設定*/
+
+#search-wrap form{
+position: relative;
+height: 66px;
+}
+
+/*==テキスト入力とボタンinput共通設定*/
+#search-wrap input{
+-webkit-appearance:none;/*SafariやChromeのデフォルトの設定を無効*/
+outline: none;
+cursor: pointer;/*カーソルを指マークに*/
+font-size: large;
+}
+
+/*テキスト入力input設定*/
+#search-wrap input[type="text"] {
+width: 100%;
+padding: 20px;
+border: none;
+border-bottom:2px solid #666;
+transition: all 0.5s;
+letter-spacing: 0.05em;
+}
+
+
+
+/*ボタン設定*/
+#search-wrap button[type="submit"] {
+position: absolute;
+ top:0;
+right:0px;
+background:url("../img/icon_search.svg") no-repeat 15px center;/*虫眼鏡アイコンを背景に表示*/
+background-size: 25px 25px;
+width:60px;
+height: 60px;
+}
+
+/*=======　閉じるための×ボタン　========*/
+.close-btn{
+position: absolute;
+top:10px;
+right:10px;
+z-index: 2;
+cursor: pointer;
+  width: 60px;
+  height:60px;
+}
+
+.close-btn span{
+  display: inline-block;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+background-color: #fff;
+}
+
+/*×マーク*/
+.close-btn span:nth-of-type(1) {
+  top: 21px;
+  left: 16px;
+  transform: translateY(6px) rotate(-135deg);
+  width: 50%;
+}
+
+.close-btn span:nth-of-type(2){
+  top: 32px;
+  left: 16px;
+  transform: translateY(-6px) rotate(135deg);
+  width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
