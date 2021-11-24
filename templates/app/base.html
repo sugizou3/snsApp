@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BisinessHakase</title>
+    <!-- <script type="text/javascript" src="{% static 'javascript/index.js' %}"></script> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header Starts -->
+    <div class="header" >
+      <div class="header__left">
+        <i id="menu" class="material-icons">menu</i>
+        <p>BisinessHakase</p>
+        
+      </div>
+
+      <div class="header__search ">
+        <form action="">
+          <input type="text" placeholder="検索" />
+          <button><i class="material-icons">search</i></button>
+        </form>
+      </div>
+
+
+      <div id="search-wrap"><!--表示エリアのHTML虫眼鏡マークをクリックするとsearch-wrap に表示用のクラス名が付与されて前面に画面表示。閉じるボタン（close-btn）をクリックするとクラス名が除去されて非表示。-->
+        <div class="close-btn"><span></span><span></span></div>
+        <div class="search-area">
+        <form role="search" method="get" action="">
+        <input type="text" value="" name="" id="search-text" placeholder="search">
+        <button type="submit" id="searchsubmit" value=""><i class="material-icons search">search</i></button>
+        </form>
+        <!--/search-area--></div>
+        <!--/search-wrap--></div>
+
+      <div class="header__icons">
+        <i class="material-icons search">search</i>
+        <a href="{% url 'app:create' %}"><i class="material-icons">add_circle_outline</i></a>
+        <i class="material-icons">archive</i>
+        <i class="material-icons">menu_book</i>
+        <i class="material-icons account">account_circle</i>
+      </div>
+    </div>
+    <!-- Header Ends -->
+
+    
+
+    <!-- Sidebar start -->
+    <div class="sidebar">
+      <div></div>
+      <div class="sidebar__categories">
+        <div class="sidebar__category">
+          <i class="material-icons">home</i>
+          <span>ホーム</span>
+        </div>
+        <div class="sidebar__category">
+          <i class="material-icons">search</i>
+          <span>検索</span>
+        </div>
+        <div class="sidebar__category">
+          <i class="material-icons">add_circle_outline</i>
+          <span>作成</span>
+        </div>
+        <div class="sidebar__category">
+          <i class="material-icons">menu_book</i>
+          <span>マイページ</span>
+        </div>
+      </div>
+      <hr />
+      <div class="sidebar__categories">
+        <div class="sidebar__category">
+          <i class="material-icons">library_add_check</i>
+          <span>Library</span>
+        </div>
+        <div class="sidebar__category">
+          <i class="material-icons">history</i>
+          <span>History</span>
+        </div>
+        <div class="sidebar__category">
+          <i class="material-icons">play_arrow</i>
+          <span>Your Videos</span>
+        </div>
+        <div class="sidebar__category">
+          <i class="material-icons">watch_later</i>
+          <span>Watch Later</span>
+        </div>
+        <div class="sidebar__category">
+          <i class="material-icons">thumb_up</i>
+          <span>Goodd Videos</span>
+        </div>
+      </div>
+      <hr />
+    </div>
+    <!-- Sidebar End  -->
+
+
+
+    <!-- main body starts -->
+    <div class="main__body">
+
+      {% block content %}
+      {% endblock %}
+
+      <div style="flex: 0.33" class="widgets">
+        <div
+          class="fb-page"
+          data-href="https://www.facebook.com/facebook"
+          data-tabs="timeline"
+          data-width="500"
+          data-height="1000"
+          data-small-header="false"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="true"
+        >
+          <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/facebook">Facebook</a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <!-- main body ends -->
+
+
+
+    <!-- footer start -->
+    <footer class="">
+      <div class="footer__icons ">
+        <i class="material-icons ">home</i>
+        <i class="material-icons">search</i>
+        <i class="material-icons">add_circle_outline</i>
+        <i class="material-icons">menu_book</i>
+      </div>
+
+    </footer>
+    <!-- Footer End  -->
+
+    <!-- related to Facebook -->
+    <div id="fb-root"></div>
+
+    <!-- start jsScript -->
+    <!-- <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0"
+      nonce="zUxEq08J"
+    ></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <script type="text/javascript" src="{% static 'javascript/index.js' %}"></script>
+    
+    <!-- jsScript End  -->
+  </body>
+</html>

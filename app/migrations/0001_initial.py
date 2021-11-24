@@ -20,6 +20,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('main', models.TextField()),
+                ('bookname', models.TextField()),
                 ('author', models.TextField()),
                 ('sub', models.TextField()),
                 ('date_posted', models.DateField(default=django.utils.timezone.now)),
