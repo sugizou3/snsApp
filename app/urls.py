@@ -5,5 +5,5 @@ app_name = 'app'
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('create', views.CreateView, name='create'),
+    path('form', views.form, name='form'),
 ]

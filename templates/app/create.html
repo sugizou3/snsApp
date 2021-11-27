@@ -2,32 +2,35 @@
 {% load static %}
 {% block content %}
 <!-- feed starts -->
-<div class="form" action="{% url create %}" method="post">
-{% csrf_token %}
-  <div class="form__bottom">
-    <p class="form-tag-main">メイン</p>
-      <div class="FlexTextarea form-input-main">
-      <div class="FlexTextarea__dummy" aria-hidden="true"></div>
-      <textarea class="FlexTextarea__textarea"></textarea>
-    </div>          
-    <p class="form-tag-name">本の題名</p>
-      <div class="FlexTextarea form-input-name">
-      <div class="FlexTextarea__dummy" aria-hidden="true"></div>
-      <textarea class="FlexTextarea__textarea " ></textarea>
-    </div>          
-    <p class="form-tag-name">著者</p>
-      <div class="FlexTextarea form-input-name">
-      <div class="FlexTextarea__dummy" aria-hidden="true"></div>
-      <textarea class="FlexTextarea__textarea"></textarea>
-    </div>          
-    <p class="form-tag-sub">サブ
-    </p>
-    <div class="FlexTextarea">
-      <div class="FlexTextarea__dummy" aria-hidden="true"></div>
-      <textarea class="FlexTextarea__textarea"></textarea>
+
+<form action="{% url 'app:form' %}" method="POST" class="form">
+  {% csrf_token %}
+    <div class="form__bottom">
+      <p class="form-tag-main">メイン</p>
+        <div class="FlexTextarea form-input-main">
+        <div class="FlexTextarea__dummy" aria-hidden="true"></div>
+        <textarea class="FlexTextarea__textarea" name="main"></textarea>
+      </div>          
+      <p class="form-tag-name">本の題名</p>
+        <div class="FlexTextarea form-input-name">
+        <div class="FlexTextarea__dummy" aria-hidden="true"></div>
+        <textarea class="FlexTextarea__textarea " name="bookname" ></textarea>
+      </div>          
+      <p class="form-tag-name">著者</p>
+        <div class="FlexTextarea form-input-name">
+        <div class="FlexTextarea__dummy" aria-hidden="true"></div>
+        <textarea class="FlexTextarea__textarea" name="author"></textarea>
+      </div>          
+      <p class="form-tag-sub">サブ
+      </p>
+      <div class="FlexTextarea">
+        <div class="FlexTextarea__dummy" aria-hidden="true"></div>
+        <textarea class="FlexTextarea__textarea" name="sub"></textarea>
+      </div>
+      <button type="submit" class="form-button">投稿</button>
     </div>
-  </div>
-  <div class="under-block"></div>
-</div>
+    <div class="under-block"></div>
+  </form>
+
 <!-- feed ends -->
 {% endblock %}

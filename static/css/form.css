@@ -88,6 +88,12 @@
   height: 60px;
 }
 
+.form-button {
+  color:rgb(255, 255, 255);
+  background-color: #00d0ff;
+  border: none;
+  justify-content: center;
+}
 
 
 .FlexTextarea {
