@@ -2,19 +2,14 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block content %}
-<div class="main__body">
-
+<div class="main_body">
+  
   <div class="filters" id="filters">
-    <button class="filter-options active">all</button>
-    <button class="filter-options">CSS</button>
-    <button class="filter-options">web development</button>
-    <button class="filter-options">python</button>
-    <button class="filter-options">entertainment</button>
-    <button class="filter-options">marvel</button>
-    <button class="filter-options">javascript</button>
-    <button class="filter-options">artificial intelligence</button>
-    <button class="filter-options">machine learning</button>
-    <button class="filter-options">trending</button>
+    {% for tag in tags %}
+    <form action="POST">
+      <button class="filter-options" name='{{ tag.tag }}'>{{ tag.tag }}</button>
+    </form>
+    {% endfor %}
   </div>
 </div>
   <!-- feed starts -->
