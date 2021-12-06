@@ -35,6 +35,23 @@ class Post(models.Model):
         ordering = ('-pub_data',)
 
 
+class PostMapper:
+    def __init__(self, obj):
+        self.obj = obj  
+
+        def as_dict(self):
+            return {
+                'owner': self.obj.owner,
+                'main': self.obj.main,
+                'bookname': self.obj.bookname,  
+                'author': self.obj.author,  
+                'sub': self.obj.sub,  
+                'count_good': self.obj.count_good,  
+                'comment': self.obj.comment,  
+                'pub_data': self.obj.pub_data,
+            }  
+
+
 class Friend(models.Model):
     owner = models.ForeignKey(User,on_delete=models.CASCADE,related_name='friend_owner')
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='friend_user')

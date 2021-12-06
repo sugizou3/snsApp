@@ -228,6 +228,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .sidebar {
@@ -339,7 +340,12 @@ body {
 }
 
 
+@media (min-width: 768px) {
 
+  .feed {
+    max-width: 70vw;
+  }
+}
 
 @media (max-width: 768px) {
   .header__search {
@@ -451,7 +457,7 @@ body {
     font-size: 30px;
   }
 
-
+  
   
 }
 

@@ -6,8 +6,9 @@
   
   <div class="filters" id="filters">
     {% for tag in tags %}
-    <form action="POST">
-      <button class="filter-options" name='{{ tag.tag }}'>{{ tag.tag }}</button>
+    <form action="{% url 'app:index' %}" method="POST">
+      {% csrf_token %}
+      <button class="filter-options" name='{{ tag.tag }}' value="{{ tag.tag }}">{{ tag.tag }}</button>
     </form>
     {% endfor %}
   </div>

@@ -21,9 +21,10 @@
       </div>
 
       <div class="header__search ">
-        <form action="">
-          <input type="text" placeholder="検索" />
-          <button><i class="material-icons">search</i></button>
+        <form id="ajax_search" action="{% url 'app:ajax_search' %}" method="POST">
+          <input type="text" id="id_search" placeholder="検索" required/>
+          <button type="submit"><i class="material-icons">search</i></button>
+          {% csrf_token %}
         </form>
       </div>
 
@@ -48,8 +49,7 @@
     </div>
     <!-- Header Ends -->
 
-    
-
+  
     <!-- Sidebar start -->
     <div class="sidebar">
       <div></div>
@@ -151,10 +151,60 @@
       src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v10.0"
       nonce="zUxEq08J"
     ></script> -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="index.js"></script> -->
     <script type="text/javascript" src="{% static 'javascript/index.js' %}"></script>
-    
+    {% block extrajs %}{% endblock %}
+    <script>
+      function getCookie(name) {
+          var cookieValue = null;
+          if (document.cookie && document.cookie !== '') {
+              var cookies = document.cookie.split(';');
+              for (var i = 0; i < cookies.length; i++) {
+                  var cookie = jQuery.trim(cookies[i]);
+                  // Does this cookie string begin with the name we want?
+                  if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                      cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                      break;
+                  }
+              }
+          }
+          return cookieValue;
+      }
+
+      var csrftoken = getCookie('csrftoken');
+
+      function csrfSafeMethod(method) {
+          // these HTTP methods do not require CSRF protection
+          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+      }
+
+      $.ajaxSetup({
+          beforeSend: function (xhr, settings) {
+              if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                  xhr.setRequestHeader("X-CSRFToken", csrftoken);
+              }
+          }
+      });
+
+      $('#ajax_search').on('submit', function(e) {
+          e.preventDefault();
+
+          $.ajax({
+              'url': '{% url "app:ajax_search" %}',
+              'type': 'POST',
+              'data': {
+                  'keyword': $('#id_search').val(),
+              },
+              'dataType': 'json'
+          })
+          .done(function(response){
+              console.log(response.posts);
+          });
+      });
+  </script>
+
+
     <!-- jsScript End  -->
   </body>
 </html>
