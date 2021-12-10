@@ -4,11 +4,13 @@ from django.http import request
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from django.views.generic import ListView ,CreateView
+from django.views.generic import ListView ,CreateView ,TemplateView
 from django.http import JsonResponse
+from django.core.paginator import Paginator
 
 from .models import Post, Tag
 from .forms import PostForm
+import random, string
 
 # Create your views here.
 def index(request):
@@ -35,11 +37,42 @@ def index(request):
     
     params = {
         'tags':tags,
-        # 'posts':post,
+        'posts':post,
         'login_user':request.user,
     }
 
     return render(request, 'app/index.html',params)
+
+
+
+class IndexView(ListView):
+    model = Post
+    template_name = 'app/index.html'
+    paginate_by = 10
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return self.model.objects.all().order_by('pub_data')
+
+
+# モデルがないときに１度だけ実行すれば１００万件作成してくれる urlは/formssssss
+class MakeData(TemplateView):
+    """ユーザーの詳細ページ"""
+    template_name = 'app/index.html'
+
+    def get(self,request, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        for i in range(1000000):
+            post = Post()
+            post.main = 'test_' + str(i+1)
+            post.bookname = 'test_' + str(i+1)
+            post.author = 'test_' + str(i+1)
+            post.sub = ''.join(random.choices(string.ascii_letters + string.digits, k=2000))
+            post.owner = request.user
+            post.save()
+
+        return context
 
 
 

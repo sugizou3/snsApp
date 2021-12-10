@@ -152,6 +152,8 @@
       nonce="zUxEq08J"
     ></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'javascript/scroll/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'javascript/scroll/infinite.min.js' %}"></script>
     <!-- <script src="index.js"></script> -->
     <script type="text/javascript" src="{% static 'javascript/index.js' %}"></script>
     {% block extrajs %}{% endblock %}
@@ -202,6 +204,18 @@
               console.log(response.posts);
           });
       });
+  </script>
+
+<script>
+  var infinite = new Waypoint.Infinite({
+      element: $('.infinite-container')[0],
+      onBeforePageLoad: function () {
+      $('.loading').show();
+      },
+      onAfterPageLoad: function ($posts) {
+      $('.loading').hide();
+      }
+  });
   </script>
 
 

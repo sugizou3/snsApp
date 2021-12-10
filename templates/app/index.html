@@ -4,7 +4,7 @@
 {% block content %}
 <div class="main_body">
   
-  <div class="filters" id="filters">
+  <div class="filters " id="filters">
     {% for tag in tags %}
     <form action="{% url 'app:index' %}" method="POST">
       {% csrf_token %}
@@ -14,10 +14,10 @@
   </div>
 </div>
   <!-- feed starts -->
-  <div class="feed">
+  <div class="feed infinite-container">
     {% for post in posts %}
     <!-- post starts -->
-    <div class="post">
+    <div class="post infinite-item">
       <div class="post__top">
         <img
           class="user__avatar post__avatar"
@@ -64,5 +64,12 @@
     {% endfor %}
 
   </div>
+  <div class="loading" style="display: none;">
+    読み込み中...
+  </div>
+
+  {% if page_obj.has_next %}
+  <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}">さらに読み込む</a>
+  {% endif %}
   <!-- feed ends -->
 {% endblock %}
